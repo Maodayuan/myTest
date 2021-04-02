@@ -18,4 +18,8 @@
 # driver = webdriver.Chrome()
 # driver.get('https://www.baidu.com/')
 # driver.quit()
-
+from selenium import webdriver
+path = '/usr/local/bin/chromedriver'
+# path = '/Users/maodayuan/Desktop/mytest/chromedriver'
+driver = webdriver.Chrome(executable_path=path)
+driver.get('http://www.baidu.com')
