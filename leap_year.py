@@ -1,17 +1,20 @@
-# class LeapYear:
-#     """计算某年是否为闰年"""
-#     def __init__(self, year):
-#         self.year = year
-#
-#     def answer(self):
-#         year = self.year
-#         if year % 100 == 0:
-#             if year % 400 == 0:
-#                 # 整百年能被400整除的是闰年
-#                 return '{}是闰年'.format(year)
+class LeapYear:
+    """计算某年是否为闰年"""
+    def __init__(self, year):
+        self.year = year
 
-import requests
+    def answer(self):
+        year = self.year
+        if year % 100 == 0:
+            if year % 400 == 0:
+                # 整百年能被400整除的是闰年
+                return '{0}是闰年'.format(year)
+            else:
+                return '{0}不是闰年'.format(year)
 
-data = {"ips": ["10.202.201.106"]}
-r = requests.post("http://10.1.1.110:3001/v1/hwinventory", data=data)
-print(r.text)
+        else:
+            if year % 4 == 0:
+                # 非正百年能被4整除的是闰年
+                return '{0}是闰年'.format(year)
+            else:
+                return '{0}不是闰年'.format(year)
