@@ -433,12 +433,54 @@
 #
 # if __name__ == "__main__":
 #     unittest.main()
-import unittest
+# import unittest
+#
+#
+# def setUpModule():
+#     print("test module start >>>>>>>>>>>>>>")
+#
+#
+# def tearDownModule():
+#     print("test module end >>>>>>>>>")
+#
+#
+# # 113
+# class MyTest(unittest.TestCase):
+#
+#     @classmethod
+#     def setUpClass(cls) -> None:
+#         print('test class start =====>')
+#
+#     @classmethod
+#     def tearDownClass(cls) -> None:
+#         print("test class end =====>")
+#
+#     def setUp(self) -> None:
+#         print('test case start -->')
+#
+#     def tearDown(self) -> None:
+#         print('test case end ---->')
+#
+#     def test_case1(self):
+#         print('test case1')
+#
+#     def test_case2(self):
+#         print('test case2')
 
 
-def setUpModule():
-    print("test module start >>>>>>>>>>>>>>")
+# if __name__ == "__main__":
+#     unittest.main()
 
-def tearDownModule():
-    pass
-# 113
+import requests
+from requests import Request, Session
+
+# url = 'http://httpbin.org/post'
+# data = {'name': 'tom'}
+# headers = {
+#     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36'
+#     }
+# s = Session()
+# req = Request('POST', url, data=data, headers=headers)
+# prepped = s.prepare_request(req)
+# r = s.send(prepped)
+# print(r.text)
