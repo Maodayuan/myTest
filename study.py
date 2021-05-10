@@ -473,6 +473,7 @@
 
 import requests
 from requests import Request, Session
+import re
 
 # url = 'http://httpbin.org/post'
 # data = {'name': 'tom'}
@@ -484,3 +485,25 @@ from requests import Request, Session
 # prepped = s.prepare_request(req)
 # r = s.send(prepped)
 # print(r.text)
+
+# content = 'Hello 1234567 World_This is a Regex Demo'
+# result = re.match('^He.*?(\d+).*Demo$', content)
+# print(result)
+# print(result.group())
+# print(result.group(1))
+# print(result.span())
+
+
+
+from urllib.parse import urlencode
+import requests
+base_url = 'https://m.weibo.cn/api/container/getIndex?'
+
+headers = {
+    'Host': 'm.weibo.cn',
+    'Referer': 'https://m.weibo.cn/u/2830678474',
+    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36',
+    'X-Requested-With': 'XMLHttpRequest',
+}
+
+requests.get()
