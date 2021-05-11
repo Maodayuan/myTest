@@ -47,10 +47,10 @@
 #     # 创建测试运行器
 #     runner = unittest.TextTestRunner()
 #     runner.run(suit)
-import unittest
+import cmdb_unittest
 
 
-class TestAssert(unittest.TestCase):
+class TestAssert(cmdb_unittest.TestCase):
 
     def test_equal(self):
         self.assertEqual(2 + 2, 4)
@@ -67,4 +67,4 @@ class TestAssert(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main()
+    cmdb_unittest.main()

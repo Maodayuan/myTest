@@ -1,9 +1,9 @@
-import unittest
+import cmdb_unittest
 from time import sleep
 from selenium import webdriver
 
 
-class TestBaidu(unittest.TestCase):
+class TestBaidu(cmdb_unittest.TestCase):
     def setUp(self) -> None:
         self.driver = webdriver.Chrome()
         self.base_url = 'https://www.baidu.com/'
@@ -30,4 +30,4 @@ def tearDown(self) -> None:
 
 
 if __name__ == '__main__':
-    unittest.main()
+    cmdb_unittest.main()

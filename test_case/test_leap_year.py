@@ -1,8 +1,8 @@
-import unittest
+import cmdb_unittest
 from test_case.leap_year import LeapYear
 
 
-class TestLeapYear(unittest.TestCase):
+class TestLeapYear(cmdb_unittest.TestCase):
 
     def test_2000(self):
         ly = LeapYear(2000)
@@ -21,4 +21,4 @@ class TestLeapYear(unittest.TestCase):
         self.assertEqual(ly.answer(), '2100不是闰年')
 
     if __name__ == '__main__':
-        unittest.main()
+        cmdb_unittest.main()
