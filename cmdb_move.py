@@ -8,7 +8,7 @@ names = {
     '/cmdb/v1/disk-type/info': {"idc": "东涌机房"},
     '/cmdb/v1/memory/info': {"diskType": "云盘"},
     '/cmdb/v1/biz-line/info': {"bizLine": "IM业务线"},
-    ' /cmdb/v1/app-info': {"service_id": 12345, "service_name": "车主监控服务"},
+    '/cmdb/v1/app-info': {"service_id": 12345, "service_name": "车主监控服务"},
     '/cmdb/v1/app-relate-user/info': '{}',
     '/cmdb/v1/app/man': {"appName": "车主监控服务"},
     '/cmdb/v1/app-db/info': {"appId": "xxxxx", "appName": "车主监控服务"},
@@ -30,11 +30,10 @@ class Move(object):
         self.real_url = self.url + self.name
 
     def req_get(self):
-        # self.url = 'https://movie.douban.com/'
-        # self.real_url = self.url + self.name
+
         try:
-            self.respone = requests.get(url=self.real_url, headers=self.headers)
-            data = self.respone.text
+            self.response = requests.get(url=self.real_url, headers=self.headers)
+            data = self.response.text
             data = json.loads(data)
         except Exception as e:
             print(e, '不是json数据')
@@ -49,11 +48,9 @@ class Move(object):
                 print('{}'.format(data_json))
 
     def req_post(self, data):
-
-        print(data)
         try:
-            self.respone = requests.post(url=self.real_url, data=data, headers=self.headers)
-            data = self.respone.text
+            self.response = requests.post(url=self.real_url, data=data, headers=self.headers)
+            data = self.response.text
             data = json.loads(data)
         except Exception as e:
             print(e, '不是json数据')

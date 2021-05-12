@@ -527,6 +527,6 @@ html = """
 from bs4 import BeautifulSoup
 
 soup = BeautifulSoup(html, 'lxml')
-print(soup.p.children)
-for i, child in enumerate(soup.p.children):
+print(soup.p.descendants)
+for i, child in enumerate(soup.p.descendants):
     print(i, child)
