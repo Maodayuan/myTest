@@ -470,10 +470,10 @@
 
 # if __name__ == "__main__":
 #     unittest.main()
-
-import requests
-from requests import Request, Session
-import re
+#
+# import requests
+# from requests import Request, Session
+# import re
 
 # url = 'http://httpbin.org/post'
 # data = {'name': 'tom'}
@@ -494,16 +494,39 @@ import re
 # print(result.span())
 
 
+# from urllib.parse import urlencode
+# import requests
+# base_url = 'https://m.weibo.cn/api/container/getIndex?'
+#
+# headers = {
+#     'Host': 'm.weibo.cn',
+#     'Referer': 'https://m.weibo.cn/u/2830678474',
+#     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36',
+#     'X-Requested-With': 'XMLHttpRequest',
+# }
+#
+# requests.get()
+html = """
+<html>
+    <head>
+        <title>The Dormouse's story</title>
+    </head>
+    <body>
+        <p class="story">
+            Once upon a time there were three little sisters; and their names were
+            <a href="http://example.com/elsie" class="sister" id="link1">
+                <span>Elsie</span>
+            </a>
+            <a href="http://example.com/lacie" class="sister" id="link2">Lacie</a> 
+            and
+            <a href="http://example.com/tillie" class="sister" id="link3">Tillie</a>
+            and they lived at the bottom of a well.
+        </p>
+        <p class="story">...</p>
+"""
+from bs4 import BeautifulSoup
 
-from urllib.parse import urlencode
-import requests
-base_url = 'https://m.weibo.cn/api/container/getIndex?'
-
-headers = {
-    'Host': 'm.weibo.cn',
-    'Referer': 'https://m.weibo.cn/u/2830678474',
-    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36',
-    'X-Requested-With': 'XMLHttpRequest',
-}
-
-requests.get()
+soup = BeautifulSoup(html, 'lxml')
+print(soup.p.children)
+for i, child in enumerate(soup.p.children):
+    print(i, child)
