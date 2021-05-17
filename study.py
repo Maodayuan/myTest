@@ -506,6 +506,8 @@
 # }
 #
 # requests.get()
+
+from bs4 import BeautifulSoup
 html = """
 <html>
     <head>
@@ -517,16 +519,9 @@ html = """
             <a href="http://example.com/elsie" class="sister" id="link1">
                 <span>Elsie</span>
             </a>
-            <a href="http://example.com/lacie" class="sister" id="link2">Lacie</a> 
-            and
-            <a href="http://example.com/tillie" class="sister" id="link3">Tillie</a>
-            and they lived at the bottom of a well.
         </p>
         <p class="story">...</p>
 """
-from bs4 import BeautifulSoup
-
 soup = BeautifulSoup(html, 'lxml')
-print(soup.p.descendants)
-for i, child in enumerate(soup.p.descendants):
-    print(i, child)
+print(type(soup.a.parents))
+print(list(enumerate(soup.a.parents)))
